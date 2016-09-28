@@ -59,9 +59,9 @@ public class MongoAdminService {
 			DB db = client.getDB(databaseName);
 			
 			// save into a collection to force DB creation.
-			DBCollection col = db.createCollection("foo", null);
+			DBCollection col = db.createCollection("cf", null);
 			BasicDBObject obj = new BasicDBObject();
-			obj.put("foo", "bar");
+			obj.put("test", "this is used by cloud foundry to seed an empty mongo database");
 			col.insert(obj);
 			// drop the collection so the db is empty
 //			col.drop();

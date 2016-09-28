@@ -27,7 +27,7 @@ public class CatalogConfig {
 						Collections.singletonList(
 								new Plan(getEnvOrDefault("PLAN_ID","mongo-plan"), //env variable
 										"standard",
-										"This is a default mongo plan.  All services are created equally.",
+										"This is a default MongoDB plan.",
 										getPlanMetadata(),
 										true)),
 						Arrays.asList("mongodb", "document"),
@@ -44,8 +44,8 @@ public class CatalogConfig {
 		sdMetadata.put("imageUrl", "http://info.mongodb.com/rs/mongodb/images/MongoDB_Logo_Full.png");
 		sdMetadata.put("longDescription", "MongoDB Service");
 		sdMetadata.put("providerDisplayName", "Pivotal");
-		sdMetadata.put("documentationUrl", "https://github.com/spring-cloud-samples/cloudfoundry-mongodb-service-broker");
-		sdMetadata.put("supportUrl", "https://github.com/spring-cloud-samples/cloudfoundry-mongodb-service-broker");
+		sdMetadata.put("documentationUrl", "https://github.com/cf-platform-eng/mongodb-broker");
+		sdMetadata.put("supportUrl", "https://github.com/svrc-pivotal/mongodb-broker");
 		return sdMetadata;
 	}
 	
@@ -59,8 +59,8 @@ public class CatalogConfig {
 	
 	private List<String> getBullets() {
 		return Arrays.asList("Shared MongoDB server", 
-				"100 MB Storage (not enforced)", 
-				"40 concurrent connections (not enforced)");
+				"Creates a new database instance on a shared MongoDB cluster", 
+				"Contact your administrator for storage size options");
 	}
 	
 	private String getEnvOrDefault(final String variable, final String defaultValue){
